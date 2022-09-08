@@ -62,14 +62,14 @@ Console.WriteLine(sum);
 */
 
 //Задача 38: Задайте массив вещественных чисел. 
-//Найдите разницу между максимальным и минимальным элементов массива.
+//Найдите разницу между максимальным и минимальным элементом массива.
 //[3 7 22 2 78] -> 76
-int []arr (int n, int x, int z)
+double []arr (int n, int x, int z)
 {
-    int []a = new int [n]; 
+    double []a = new double [n]; 
     for (int i=0; i<n; i++)
     {
-        a[i] =new Random().Next(x,z+1);
+        a[i] =new Random().Next(x,z+1)+ new Random().NextDouble();
         Console.Write($"{a[i]} ");
     }
     return a;
@@ -80,12 +80,12 @@ Console.WriteLine("введите min ");
 int X = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("введите max ");
 int Z = Convert.ToInt32(Console.ReadLine());
-int []A = arr(N,X,Z);
+double []A = arr(N,X,Z);
 Console.WriteLine();
 //поиск максим и мин числа
-int Max (int []a)
+double Max (double []a)
 {
- int max =0;
+ double max =0;
 for (int i=0; i<a.Length; i++)
 {
  if (a[i]>max)
@@ -97,9 +97,9 @@ return max;
 }
 Console.WriteLine(Max(A)+ " максимальное");
 
-int Min (int []a)
+double Min (double []a)
 {
- int min =a[0];
+ double min =a[0];
 for (int i=0; i<a.Length; i++)
 {
  if (a[i]<min)
